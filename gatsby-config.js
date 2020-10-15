@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    description: "Personal page of John Doe",
+    description: "Personal page of Aryan Afrouzi",
     locale: "en",
-    title: "John Doe",
+    title: "Aryan Afrouzi",
   },
   plugins: [
     {
@@ -10,8 +10,8 @@ module.exports = {
       options: {
         basePath: "/",
         contentPath: "content/",
-        showThemeLogo: true,
-        theme: "classic",
+        showThemeLogo: false,
+        theme: "bright-green",
       },
     },
   ],
