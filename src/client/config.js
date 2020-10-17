@@ -40,5 +40,10 @@ export default {
       username: 'demo',
       password: 'demo'
     }
+  },
+
+  locale: {
+    language: 'en_EN'
   }
+
 };
