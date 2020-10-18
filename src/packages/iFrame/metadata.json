@@ -1,0 +1,15 @@
+{
+  "type": "application",
+  "name": "iFrame",
+  "category": null,
+  "server": null,
+  "title": {
+    "en_EN": "iFrame"
+  },
+  "description": {
+    "en_EN": "iFrame"
+  },
+  "files": [
+    "main.js"
+  ]
+}

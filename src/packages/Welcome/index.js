@@ -11,11 +11,15 @@ const register = (core, args, options, metadata) => {
   proc.createWindow({
     id: 'WelcomeWindow',
     title: metadata.title.en_EN,
-    dimension: {width: 400, height: 400},
+    dimension: {width: 500, height: 00},
     position: {left: 700, top: 200}
   })
     .on('destroy', () => proc.destroy())
-    .render();
+    register.render($content => $content.appendChild(
+      document.createTextNode('test')
+    ));
+
+
 
   // Creates a new WebSocket connection (see server.js)
   //const sock = proc.socket('/socket');

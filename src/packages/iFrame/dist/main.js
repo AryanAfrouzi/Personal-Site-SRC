@@ -95,13 +95,10 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.scss */ "./index.scss");
-/* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_index_scss__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var osjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! osjs */ "osjs");
-/* harmony import */ var osjs__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(osjs__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _metadata_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./metadata.json */ "./metadata.json");
-var _metadata_json__WEBPACK_IMPORTED_MODULE_2___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./metadata.json */ "./metadata.json", 1);
-
+/* harmony import */ var osjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! osjs */ "osjs");
+/* harmony import */ var osjs__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(osjs__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _metadata_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./metadata.json */ "./metadata.json");
+var _metadata_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./metadata.json */ "./metadata.json", 1);
 
  // Our launcher
 
@@ -113,9 +110,8 @@ var register = function register(core, args, options, metadata) {
     metadata: metadata
   }); // Create  a new Window instance
 
-
   proc.createWindow({
-    id: 'WelcomeWindow',
+    id: 'iFrameWindow',
     title: metadata.title.en_EN,
     dimension: {
       width: 400,
@@ -125,47 +121,21 @@ var register = function register(core, args, options, metadata) {
       left: 700,
       top: 200
     }
-
-  })
-
-  .on('destroy', function () {
+  }).on('destroy', function () {
     return proc.destroy();
-
-  })
-
-  const test = proc.createWindow({title: 'My Window'})
-  test.render($content => $content.appendChild(
-    document.createTextNode('test')
-  ));
-
-
-  // Creates a new WebSocket connection (see server.js)
-  //const sock = proc.socket('/socket');
-  //sock.on('message', (...args) => console.log(args))
-  //sock.on('open', () => sock.send('Ping'));
-  // Use the internally core bound websocket
-  //proc.on('ws:message', (...args) => console.log(args))
-  //proc.send('Ping')
-  // Creates a HTTP call (see server.js)
-  //proc.request('/test', {method: 'post'})
-  //.then(response => console.log(response));
-
+  }).render(function ($content) {
+    var iframe = document.createElement('iframe');
+    iframe.style.width = '100%';
+    iframe.style.height = '100%';
+    iframe.src = proc.resource('/data/index.html');
+    iframe.setAttribute('border', '0');
+    $content.appendChild(iframe);
+  });
   return proc;
 }; // Creates the internal callback function when OS.js launches an application
 
 
-osjs__WEBPACK_IMPORTED_MODULE_1___default.a.register(_metadata_json__WEBPACK_IMPORTED_MODULE_2__["name"], register);
-
-/***/ }),
-
-/***/ "./index.scss":
-/*!********************!*\
-  !*** ./index.scss ***!
-  \********************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
+osjs__WEBPACK_IMPORTED_MODULE_0___default.a.register(_metadata_json__WEBPACK_IMPORTED_MODULE_1__["name"], register);
 
 /***/ }),
 
@@ -176,7 +146,7 @@ osjs__WEBPACK_IMPORTED_MODULE_1___default.a.register(_metadata_json__WEBPACK_IMP
 /*! exports provided: type, name, category, server, title, description, files, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"type\":\"application\",\"name\":\"Welcome\",\"category\":null,\"server\":\"server.js\",\"title\":{\"en_EN\":\"Welcome\"},\"description\":{\"en_EN\":\"Welcome\"},\"files\":[\"main.js\",\"main.css\"]}");
+module.exports = JSON.parse("{\"type\":\"application\",\"name\":\"iFrame\",\"category\":null,\"server\":null,\"title\":{\"en_EN\":\"iFrame\"},\"description\":{\"en_EN\":\"iFrame\"},\"files\":[\"main.js\"]}");
 
 /***/ }),
 
@@ -193,4 +163,3 @@ module.exports = OSjs;
 
 /******/ });
 //# sourceMappingURL=main.js.map
-
