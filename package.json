@@ -1,5 +1,5 @@
 {
-    "homepage": "https://www.adamalston.com/",
+    "homepage": "https://www.afrouzi.me/",
     "name": "v2",
     "version": "1.6.0",
     "private": true,
@@ -35,16 +35,16 @@
             "last 1 safari version"
         ]
     },
-    "description": "Personal Website of Adam Alston",
+    "description": "Personal Website of Aryan Afrouzi",
     "main": "index.js",
     "devDependencies": {},
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/adamalston/v2.git"
+        "url": "git+https://github.com/AryanAfrouzi/Personal-Site-SRC/tree/reactive"
     },
-    "author": "Adam Alston",
+    "author": "Aryan Afrouzi",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/adamalston/v2/issues"
+        "url": "https://github.com/AryanAfrouzi/Personal-Site-SRC/issues"
     }
 }
